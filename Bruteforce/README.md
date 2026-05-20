@@ -12,6 +12,7 @@ It works by:
 
 ## Pseudo Code
 
+```text
 START
 
 INPUT array
@@ -25,6 +26,7 @@ FOR each element in array
 PRINT "Element not found"
 
 END
+```
 
 # Time Complexity
 
