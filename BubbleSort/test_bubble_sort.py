@@ -10,4 +10,4 @@ def test_case_2():
 
 
 def test_case_3():
-    assert bubblesort([9, 7, 5, 3, 1]) == [1, 3, 5, 7, 9]
+    assert bubblesort([10, 7, 5, 3, 1]) == [1, 3, 5, 7, 10]
