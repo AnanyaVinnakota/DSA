@@ -15,6 +15,16 @@ def merge(X, Y):
     out += X[p1:] + Y[p2:]
 
     return out
-arr=list(map(int,input("Enter the elements: ").split()))
 
+def mergeSort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = mergeSort(arr[:mid])
+    right = mergeSort(arr[mid:])
+    return merge(left, right)
 
+if __name__ == "__main__":
+    arr = list(map(int, input("Enter the elements: ").split()))
+    sorted_arr = mergeSort(arr)
+    print("Sorted array:", sorted_arr)
