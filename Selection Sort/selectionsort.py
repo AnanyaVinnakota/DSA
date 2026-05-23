@@ -12,9 +12,9 @@ def selection_sort(arr):
         arr[i], arr[min_index] = arr[min_index], arr[i]
 
     return arr
+if __name__ == "__main__":
+    arr = list(map(int, input("Enter numbers separated by space: ").split()))
 
-arr = list(map(int, input("Enter numbers separated by space: ").split()))
-
-print("Original Array:", arr)
-selection_sort(arr)
-print("Sorted Array:", arr)
+    print("Original Array:", arr)
+    selection_sort(arr)
+    print("Sorted Array:", arr)
