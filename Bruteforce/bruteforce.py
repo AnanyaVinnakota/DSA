@@ -3,13 +3,13 @@ def linear_search(arr, target):
         if arr[i] == target:
             return i
     return -1
+if __name__ == "__main__":
+    arr = list(map(int, input("Enter elements: ").split()))
+    target = int(input("Enter target element: "))
 
-arr = list(map(int,input("Enter elements:").split()))
-target =int(input("Enter target element: "))
+    result = linear_search(arr, target)
 
-result = linear_search(arr, target)
-
-if result != -1:
-    print("Element found at index:", result)
-else:
-    print("Element not found")
+    if result != -1:
+        print("Element found at index:", result)
+    else:
+        print("Element not found")
