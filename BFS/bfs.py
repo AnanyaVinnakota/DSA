@@ -3,8 +3,8 @@ from collections import deque
 def bfs(graph, start):
 
     visited = set()
-
     queue = deque()
+    result=[]
 
     visited.add(start)
     queue.append(start)
@@ -13,7 +13,7 @@ def bfs(graph, start):
 
         node = queue.popleft()
 
-        print(node, end=" ")
+        result.append(node)
 
         for neighbor in graph[node]:
 
@@ -21,3 +21,5 @@ def bfs(graph, start):
 
                 visited.add(neighbor)
                 queue.append(neighbor)
+
+    return result
