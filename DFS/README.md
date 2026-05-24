@@ -17,12 +17,12 @@ DFS(node):
             DFS(neighbor)
 
 ## Time Complexity
-O(V+E) --Each node is visited once and each edge is checked once
-O(V) --In a tree, Edges=Vertices-1
+1. O(V+E) --Each node is visited once and each edge is checked once
+2. O(V) --In a tree, Edges=Vertices-1
 
 # Special Cases
-Sparse Graph --O(V) -- Very few edges
-Dense Graph --O(V²) --Almost every node is connected to every other node
+1. Sparse Graph --O(V) -- Very few edges
+2. Dense Graph --O(V²) --Almost every node is connected to every other node
 
 ## Space Complexity
 O(V) --Stores all the visited nodes
