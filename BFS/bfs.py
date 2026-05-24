@@ -12,7 +12,6 @@ def bfs(graph, start):
     while queue:
 
         node = queue.popleft()
-
         result.append(node)
 
         for neighbor in graph[node]:
