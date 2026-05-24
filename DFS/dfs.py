@@ -1,11 +1,19 @@
-def dfs(graph, node, visited):
-    if node not in visited:
-        print(node)
+def dfs(graph, start):
 
-        visited.add(node)
+    visited = []
 
-        for neighbor in graph[node]:
-            dfs(graph, neighbor, visited)
+    def dfs_func(node):
+
+        if node not in visited:
+
+            visited.append(node)
+
+            for neighbor in graph[node]:
+                dfs_func(neighbor)
+
+    dfs_func(start)
+
+    return visited
     
 if __name__ == "__main__":
     graph = {
@@ -16,6 +24,6 @@ if __name__ == "__main__":
         'E': ['F'],
         'F': []
     }
-    visited = set()
+    result = dfs(graph, 'A')
     print("DFS Traversal:")
-    dfs(graph, 'A', visited)
+    print(result)
