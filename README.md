@@ -2,7 +2,7 @@
 
 ## Space Complexity
 
-![BFS Space Complexity](Graphs/bfs_space.png)
+![BFS Space Complexity](graphs/bfs_space.png)
 
 **Space Complexity Formula:**
 
@@ -14,7 +14,7 @@ S(V) = O(V)
 
 ## Time Complexity
 
-![BFS Time Complexity](Graphs/bfs_time.png)
+![BFS Time Complexity](graphs/bfs_time.png)
 
 **Time Complexity Formula:**
 
