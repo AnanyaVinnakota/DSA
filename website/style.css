@@ -1,0 +1,711 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    text-align: center;
+
+    padding: 70px 20px 50px;
+
+    background: #111827;
+
+    color: white;
+}
+
+.hero h1 {
+    margin: 0 0 15px;
+
+    font-size: 44px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    color: #d1d5db;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 50px auto;
+}
+
+
+/* =========================================
+   ALGORITHM SECTIONS
+========================================= */
+
+.algorithm-section {
+    margin-bottom: 55px;
+}
+
+.algorithm-section h2 {
+    font-size: 28px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   ALGORITHM GRID
+========================================= */
+
+.algorithm-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   ALGORITHM CARD
+========================================= */
+
+.algorithm-card {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 200px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Card hover */
+
+.algorithm-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.algorithm-card h3 {
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    font-size: 21px;
+}
+
+
+.algorithm-card p {
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+.algorithm-card span {
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BFS / ALGORITHM PAGE HEADER
+========================================= */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 40px;
+
+    margin: 20px 0 10px;
+}
+
+.header p {
+    color: #6b7280;
+
+    font-size: 17px;
+}
+
+.back {
+    display: inline-block;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   TABS
+========================================= */
+
+.tabs {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #e5e7eb;
+
+    color: #1f2937;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tab-button:hover {
+    background: #d1d5db;
+
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+/* =========================================
+   TAB CONTENT
+========================================= */
+
+/*
+   Hide all sections by default.
+*/
+
+.tab-content {
+    display: none;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/*
+   Only the selected tab is displayed.
+*/
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.tab-content h2 {
+    margin-top: 0;
+
+    font-size: 28px;
+}
+
+.tab-content h3 {
+    margin-top: 25px;
+}
+
+.tab-content p,
+.tab-content li {
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CODE BOX
+========================================= */
+
+.code-box {
+    margin-top: 30px;
+
+    background: #111827;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    overflow-x: auto;
+}
+
+.code-box h3 {
+    color: white;
+
+    margin-top: 0;
+}
+
+.code-box pre {
+    margin: 0;
+
+    color: #e5e7eb;
+
+    line-height: 1.6;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================
+   TEST CASE GRAPH
+========================================= */
+
+.graph-container {
+    position: relative;
+
+    min-height: 250px;
+
+    margin: 30px 0;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+.node {
+    position: absolute;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* Node positions */
+
+.node-a {
+    top: 30px;
+    left: 50%;
+}
+
+.node-b {
+    top: 120px;
+    left: 30%;
+}
+
+.node-c {
+    top: 120px;
+    left: 65%;
+}
+
+.node-d {
+    top: 200px;
+    left: 20%;
+}
+
+.node-e {
+    top: 200px;
+    left: 40%;
+}
+
+
+/* =========================================
+   INPUT / EXAMPLE
+========================================= */
+
+.example-info {
+    margin-top: 25px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    overflow-x: auto;
+}
+
+.example-info h3 {
+    margin-top: 0;
+}
+
+.example-info pre {
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   EXECUTION
+========================================= */
+
+.execution {
+    margin-top: 30px;
+}
+
+.execution-box {
+    padding: 20px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.execution-box p {
+    margin: 10px 0;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.controls {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.controls button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   OUTPUT
+========================================= */
+
+.output {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.output h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   COMPLEXITY CARDS
+========================================= */
+
+.complexity-card {
+    background: #f9fafb;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.complexity-card h3 {
+    margin-top: 0;
+}
+
+.complexity {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+}
+
+
+/* =========================================
+   BENCHMARK GRAPH CONTAINER
+========================================= */
+
+.benchmark {
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    max-width: 750px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+}
+
+
+/* Graph title */
+
+.benchmark h3 {
+    text-align: center;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   GRAPH IMAGE SIZE
+========================================= */
+
+/*
+   Keeps the graph inside the website
+   borders and prevents it becoming huge.
+*/
+
+.benchmark img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #111827;
+
+    color: #d1d5db;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 50px 20px 40px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 92%;
+
+        margin-top: 35px;
+    }
+
+    .algorithm-section h2 {
+        font-size: 24px;
+    }
+
+    .algorithm-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* BFS header */
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+
+    /* Tabs */
+
+    .tabs {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .tab-button {
+        width: 100%;
+    }
+
+
+    /* Tab content */
+
+    .tab-content {
+        padding: 20px;
+    }
+
+
+    /* Graph */
+
+    .benchmark {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .benchmark img {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* Test graph */
+
+    .graph-container {
+        min-height: 220px;
+    }
+
+}

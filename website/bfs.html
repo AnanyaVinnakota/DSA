@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BFS | DSA Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <a href="index.html" class="back">
+                ← Back to Algorithms
+            </a>
+
+            <h1>Breadth First Search</h1>
+
+            <p>
+                Interactive exploration of Breadth First Search
+            </p>
+
+        </header>
+
+
+        <!-- ================= THREE BUTTONS ================= -->
+
+        <div class="tabs">
+
+            <button
+                class="tab-button active"
+                onclick="showTab('readme', this)">
+                README
+            </button>
+
+            <button
+                class="tab-button"
+                onclick="showTab('testcase', this)">
+                TEST CASE
+            </button>
+
+            <button
+                class="tab-button"
+                onclick="showTab('analysis', this)">
+                ANALYSIS
+            </button>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- ===================== README ==================== -->
+        <!-- ================================================= -->
+
+        <section id="readme" class="tab-content active">
+
+            <h2>About BFS</h2>
+
+            <h3>Definition</h3>
+
+            <p>
+                Breadth First Search (BFS) is a graph traversal
+                algorithm that explores vertices level by level.
+                It uses a queue data structure to keep track of
+                vertices that need to be visited.
+            </p>
+
+
+            <h3>How BFS Works</h3>
+
+            <ol>
+
+                <li>Select a starting vertex.</li>
+
+                <li>
+                    Mark the starting vertex as visited.
+                </li>
+
+                <li>
+                    Add it to the queue.
+                </li>
+
+                <li>
+                    Remove a vertex from the queue.
+                </li>
+
+                <li>
+                    Visit all its unvisited neighbours.
+                </li>
+
+                <li>
+                    Add those neighbours to the queue.
+                </li>
+
+                <li>
+                    Repeat until the queue becomes empty.
+                </li>
+
+            </ol>
+
+
+            <h3>Data Structure Used</h3>
+
+            <p>
+                Queue
+            </p>
+
+
+            <h3>Time Complexity</h3>
+
+            <p>
+                O(V + E)
+            </p>
+
+
+            <h3>Space Complexity</h3>
+
+            <p>
+                O(V)
+            </p>
+
+
+            <div class="code-box">
+
+                <h3>Python Implementation</h3>
+
+                <pre><code>def bfs(graph, start):
+
+    visited = set()
+    queue = [start]
+
+    while queue:
+
+        node = queue.pop(0)
+
+        if node not in visited:
+
+            visited.add(node)
+
+            for neighbour in graph[node]:
+                queue.append(neighbour)
+
+    return visited</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- =================== TEST CASE =================== -->
+        <!-- ================================================= -->
+
+        <section id="testcase" class="tab-content">
+
+            <h2>Test Case</h2>
+
+            <p>
+                Let's execute BFS on the following graph.
+            </p>
+
+
+            <!-- GRAPH -->
+
+            <div class="graph-container">
+
+                <div class="node node-a">A</div>
+
+                <div class="node node-b">B</div>
+
+                <div class="node node-c">C</div>
+
+                <div class="node node-d">D</div>
+
+                <div class="node node-e">E</div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="example-info">
+
+                <h3>Input</h3>
+
+                <pre>graph = {
+    "A": ["B", "C"],
+    "B": ["D", "E"],
+    "C": [],
+    "D": [],
+    "E": []
+}
+
+Starting Node = A</pre>
+
+            </div>
+
+
+            <!-- EXECUTION -->
+
+            <div class="execution">
+
+                <h3>Execution</h3>
+
+                <div class="execution-box">
+
+                    <p>
+                        Current Node:
+                        <strong id="current-node">-</strong>
+                    </p>
+
+                    <p>
+                        Queue:
+                        <strong id="queue">A</strong>
+                    </p>
+
+                    <p>
+                        Visited:
+                        <strong id="visited">-</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="controls">
+
+                    <button onclick="runBFS()">
+                        ▶ Run
+                    </button>
+
+                    <button onclick="nextStep()">
+                        ⏭ Next Step
+                    </button>
+
+                    <button onclick="resetBFS()">
+                        ↻ Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- OUTPUT -->
+
+            <div class="output">
+
+                <h3>Output</h3>
+
+                <p id="output">
+                    -
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- ===================== ANALYSIS ================== -->
+        <!-- ================================================= -->
+
+        <section id="analysis" class="tab-content">
+
+            <h2>Complexity Analysis</h2>
+
+
+            <!-- TIME COMPLEXITY -->
+
+            <div class="complexity-card">
+
+                <h3>Time Complexity</h3>
+
+                <p class="complexity">
+                    O(V + E)
+                </p>
+
+                <p>
+                    V = Number of vertices
+                    <br>
+                    E = Number of edges
+                </p>
+
+            </div>
+
+
+            <!-- SPACE COMPLEXITY -->
+
+            <div class="complexity-card">
+
+                <h3>Space Complexity</h3>
+
+                <p class="complexity">
+                    O(V)
+                </p>
+
+                <p>
+                    BFS requires additional space for the
+                    queue and visited vertices.
+                </p>
+
+            </div>
+
+
+            <!-- ================= TIME GRAPH ================= -->
+
+            <div class="benchmark">
+
+                <h3>Benchmark — Time Complexity</h3>
+
+                <img
+                    src="../graphs/bfs_time.png"
+                    alt="BFS time complexity benchmark">
+
+            </div>
+
+
+            <!-- ================= SPACE GRAPH ================= -->
+
+            <div class="benchmark">
+
+                <h3>Benchmark — Space Complexity</h3>
+
+                <img
+                    src="../graphs/bfs_space.png"
+                    alt="BFS space complexity benchmark">
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/bfs.js"></script>
+
+
+    <!-- TAB JAVASCRIPT -->
+
+    <script>
+
+        function showTab(tabId, button) {
+
+            // Get all tab contents
+            const contents =
+                document.querySelectorAll(".tab-content");
+
+            // Hide all sections
+            contents.forEach(function(content) {
+
+                content.classList.remove("active");
+
+            });
+
+
+            // Get all tab buttons
+            const buttons =
+                document.querySelectorAll(".tab-button");
+
+            // Remove active from all buttons
+            buttons.forEach(function(btn) {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            // Show selected section
+            const selectedTab =
+                document.getElementById(tabId);
+
+            selectedTab.classList.add("active");
+
+
+            // Highlight selected button
+            button.classList.add("active");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
