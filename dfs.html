@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Depth First Search | DSA Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <a href="index.html" class="back">
+            ← Back to Algorithms
+        </a>
+
+        <h1>Depth First Search</h1>
+
+        <p>
+            Interactive exploration of Depth First Search
+        </p>
+
+    </header>
+
+
+    <!-- ================= TABS ================= -->
+
+    <div class="tabs">
+
+        <button
+            class="tab-button active"
+            onclick="showTab('readme', this)">
+            README
+        </button>
+
+        <button
+            class="tab-button"
+            onclick="showTab('testcase', this)">
+            TEST CASE
+        </button>
+
+        <button
+            class="tab-button"
+            onclick="showTab('analysis', this)">
+            ANALYSIS
+        </button>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ===================== README ==================== -->
+    <!-- ================================================= -->
+
+    <section id="readme" class="tab-content active">
+
+        <h2>About DFS</h2>
+
+
+        <h3>Definition</h3>
+
+        <p>
+            Depth First Search (DFS) is a graph traversal
+            algorithm that explores as far as possible along
+            each branch before backtracking.
+        </p>
+
+
+        <h3>How DFS Works</h3>
+
+        <ol>
+
+            <li>
+                Select a starting vertex.
+            </li>
+
+            <li>
+                Mark the vertex as visited.
+            </li>
+
+            <li>
+                Visit an unvisited neighbour.
+            </li>
+
+            <li>
+                Continue exploring deeper into the graph.
+            </li>
+
+            <li>
+                Backtrack when there are no unvisited
+                neighbours.
+            </li>
+
+            <li>
+                Continue until all reachable vertices
+                have been visited.
+            </li>
+
+        </ol>
+
+
+        <h3>Data Structure Used</h3>
+
+        <p>
+            Stack / Recursion
+        </p>
+
+
+        <h3>Time Complexity</h3>
+
+        <p>
+            O(V + E)
+        </p>
+
+
+        <h3>Space Complexity</h3>
+
+        <p>
+            O(V)
+        </p>
+
+
+        <div class="code-box">
+
+            <h3>Python Implementation</h3>
+
+            <pre><code>def dfs(graph, start):
+
+    visited = set()
+
+    def visit(node):
+
+        if node in visited:
+            return
+
+        visited.add(node)
+
+        for neighbour in graph[node]:
+            visit(neighbour)
+
+    visit(start)
+
+    return visited</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- =================== TEST CASE =================== -->
+    <!-- ================================================= -->
+
+    <section id="testcase" class="tab-content">
+
+        <h2>Test Case</h2>
+
+        <p>
+            Let's execute DFS on the following graph.
+        </p>
+
+
+        <!-- GRAPH -->
+
+        <div class="graph-container">
+
+            <div class="node node-a">A</div>
+
+            <div class="node node-b">B</div>
+
+            <div class="node node-c">C</div>
+
+            <div class="node node-d">D</div>
+
+            <div class="node node-e">E</div>
+
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="example-info">
+
+            <h3>Input</h3>
+
+            <pre>graph = {
+    "A": ["B", "C"],
+    "B": ["D", "E"],
+    "C": [],
+    "D": [],
+    "E": []
+}
+
+Starting Node = A</pre>
+
+        </div>
+
+
+        <!-- EXECUTION -->
+
+        <div class="execution">
+
+            <h3>Execution</h3>
+
+
+            <div class="execution-box">
+
+                <p>
+                    Current Node:
+                    <strong id="current-node">-</strong>
+                </p>
+
+                <p>
+                    Stack:
+                    <strong id="queue">A</strong>
+                </p>
+
+                <p>
+                    Visited:
+                    <strong id="visited">-</strong>
+                </p>
+
+            </div>
+
+
+            <div class="controls">
+
+                <button onclick="runDFS()">
+                    ▶ Run
+                </button>
+
+                <button onclick="nextStep()">
+                    ⏭ Next Step
+                </button>
+
+                <button onclick="resetDFS()">
+                    ↻ Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+
+        <div class="output">
+
+            <h3>Output</h3>
+
+            <p id="output">
+                -
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- ===================== ANALYSIS ================== -->
+    <!-- ================================================= -->
+
+    <section id="analysis" class="tab-content">
+
+        <h2>Complexity Analysis</h2>
+
+
+        <div class="complexity-card">
+
+            <h3>Time Complexity</h3>
+
+            <p class="complexity">
+                O(V + E)
+            </p>
+
+            <p>
+                V = Number of vertices
+                <br>
+                E = Number of edges
+            </p>
+
+        </div>
+
+
+        <div class="complexity-card">
+
+            <h3>Space Complexity</h3>
+
+            <p class="complexity">
+                O(V)
+            </p>
+
+            <p>
+                DFS requires additional space for the
+                visited vertices and recursion stack.
+            </p>
+
+        </div>
+
+
+        <!-- DFS GRAPHS WILL BE ADDED LATER -->
+
+        <div class="benchmark">
+
+            <h3>Benchmark — Time Complexity</h3>
+
+            <p>
+                DFS benchmark graph coming soon.
+            </p>
+
+        </div>
+
+
+        <div class="benchmark">
+
+            <h3>Benchmark — Space Complexity</h3>
+
+            <p>
+                DFS benchmark graph coming soon.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- DFS JAVASCRIPT -->
+
+<script src="js/dfs.js"></script>
+
+
+<!-- TAB FUNCTION -->
+
+<script>
+
+function showTab(tabId, button) {
+
+    const contents =
+        document.querySelectorAll(".tab-content");
+
+    contents.forEach(function(content) {
+
+        content.classList.remove("active");
+
+    });
+
+
+    const buttons =
+        document.querySelectorAll(".tab-button");
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    document
+        .getElementById(tabId)
+        .classList.add("active");
+
+
+    button.classList.add("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
